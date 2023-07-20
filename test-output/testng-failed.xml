@@ -5,6 +5,7 @@
     <classes>
       <class name="testNGpckg.WindowHandles">
         <methods>
+          <include name="windowsHand"/>
           <include name="handleWindow"/>
         </methods>
       </class> <!-- testNGpckg.WindowHandles -->
