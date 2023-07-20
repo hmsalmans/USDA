@@ -31,7 +31,8 @@ public class WindowHandles extends BaseClass {
 		WebElement subscribeUsda = driver.findElement(By.xpath("/html/body/div/footer/div[2]/div[2]/div/div/div/div/a"));
 		subscribeUsda.click();
 		driver.switchTo().alert().accept();// alert handling here
-		Thread.sleep(4000);
+		Thread.sleep(4000); //this need to be replaced with implicit wait i think
+		
 		
 		
 		//The new window needs to be opened before the code below should run
@@ -44,8 +45,8 @@ public class WindowHandles extends BaseClass {
 			String child = iterating.next();
 			
 			if (!parent.equalsIgnoreCase(child)) {
-		String title =		driver.switchTo().window(child).getTitle();
-				System.out.println(title);
+		String title = driver.switchTo().window(child).getTitle();
+				System.out.println(title + " (This is the Title of child window)");
 				
 			driver.findElement(By.xpath("/html/body/div/div[2]/div[1]/form/div/div[2]/div[2]/fieldset/div[3]/label")).click();
 			WebElement email =	driver.findElement(By.xpath("//*[@id=\"inputProp0\"]"));
@@ -53,9 +54,15 @@ public class WindowHandles extends BaseClass {
      		
      		driver.findElement(By.xpath("//*[@id=\"update-profile-submit-btn\"]")).click();
      		
-     	System.out.println(driver.findElement(By.xpath("//*[@id=\"optinSuccess\"]")).getText());
-     		
-     		
+     	System.out.println("\n" + driver.findElement(By.xpath("//*[@id=\"optinSuccess\"]")).getText());
+     	
+     	
+     	
+     	 
+        // switching back to main window
+     
+     	     
+     		System.out.println(" \n LETS TRY GOING BACK TO MAIN WINDOW AND GET TITLE \n " + driver.switchTo().window(parent).getTitle() +" (This is the Title of main window)");
      		
      		
      		
