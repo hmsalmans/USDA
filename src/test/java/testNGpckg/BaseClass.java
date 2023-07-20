@@ -1,5 +1,7 @@
 package testNGpckg;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -23,6 +25,7 @@ public void windowsHand() {
 		driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://www.usda.gov/nutrition-security");
 		
 	}
@@ -33,7 +36,8 @@ public void windowsHand() {
 
  
 //@AfterSuite // quit every browser after everything is done
-//public void closingwind() {
+//public void closingwind() throws InterruptedException {
+//	Thread.sleep(1000*60);
 //	 driver.quit();
 //}
 	
