@@ -27,9 +27,15 @@ public void windowsHand() {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("https://www.usda.gov/nutrition-security");
 		
+		
 	}
 
 
+public void waiting() throws InterruptedException {
+	
+	           Thread.sleep(3000);
+	
+}
 	
 
 
