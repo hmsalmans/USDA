@@ -14,8 +14,7 @@ public class BaseClass {
 	
 	
 @BeforeClass	//will run before each class
-public void windowsHand() {
-	
+public void windowsHand() {	
 	
 	
 		
@@ -37,6 +36,10 @@ public void waiting() throws InterruptedException {
 	
 }
 	
+
+
+
+
 
 
  
