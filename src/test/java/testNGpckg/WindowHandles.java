@@ -38,17 +38,16 @@ public class WindowHandles extends BaseClass {
 		
 	    
 		driver.switchTo().alert().accept();// alert handling here
-		Thread.sleep(4000); //this need to be replaced with explicit wait i think. But Nothing is working
-		//WebDriverWait wait = new WebDriverWait(driver,30);
+		//Thread.sleep(4000); //this need to be replaced with explicit wait i think. But Nothing is working
+		WebDriverWait wait = new WebDriverWait(driver,30);
 		
-		
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));//here 2 represents the current window and the new window to be opened
 		 
 				//driver.getWindowHandles();
 		
 		//The new window needs to be opened before the code below should run
 		 
 		
-		 
 		
 		 
 		 
